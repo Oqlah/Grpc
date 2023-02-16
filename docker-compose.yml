@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  server:
+    container_name: grpc-container
+    build: ./server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server:/app
+    #python:
+      #image: python:latest
+      #restart: always 
+
+  client:
+    build: ./server
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./client:/app     
+    depends_on:
+      - server
