@@ -1,0 +1,19 @@
+Python installieren , wenn wir es haben, müssen wir neue Version haben. python -m pip install --upgrade pip
+Pip installieren. py -m pip install.
+virtualenv installieren. python -m pip install virtualenv
+Herstellen neues virtualenv(in Server und in client). virtualenv name
+virtualenv aktiviern(in Server und in client). .\name\Scripts\activate
+Gprc installieren(in Server und in client). python -m pip install grpcio
+Grpc tools installieren(es reicht nur im server virtualenv) . python -m pip install grpcio-tools
+protos Folder mit helloworld.proto Datei in client und server herstellen.
+mit diese Befehl wird drei datein (helloworld_pb2_grpc.py,helloworld_pb2.py,helloworld_pb2.pyi) 
+"python -m grpc_tools.protoc -I./protos --python_out=. --pyi_out=. --grpc_python_out=. ./protos/hello.proto"
+hergestellt: helloworld_pb2.py enthält Anforderungs und Antwortklassen. 
+             helloworld_pb2_grpc.py enthält generierten Client- und Serverklassen.
+app.py in server rüft die app als server 
+app.py in client rüft die app als client 
+Docker Desktop und newer WSL Kernel version"wsl --update" installieren
+danach docker-compose schreiben, mit dem können wir ein oder mehere kontiener anwenden,
+starten oder beenden von Diensten .... 
+Mit docker-compose up -d Befehl starten wir das Containers
+Dockerfile : docker kann ein Image erstellen nach lesung der Befehle, die in Dockerfile steht.
